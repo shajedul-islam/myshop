@@ -5,6 +5,7 @@ public class Employee {
     private long id;
     private String name;
     private String phoneNumber;
+    private String type;
 
     public long getId() {
         return id;
