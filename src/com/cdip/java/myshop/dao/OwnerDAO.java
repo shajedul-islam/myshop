@@ -12,15 +12,18 @@ public class OwnerDAO {
     public Owner save(Owner owner) {
         // save owner in database
         // connect to database
-        Connection connection = ConnectionFactory.getConnection();
+        Connection connection = null;
+        Statement statement = null;
         try {
-            Statement statement = connection.createStatement();
+            connection = ConnectionFactory.getConnection();
+            statement = connection.createStatement();
             statement.executeUpdate("INSERT INTO owner(name, phone_number) " +
                     "VALUES ( '" + owner.getName() + "', " + owner.getPhoneNumber() + ")");
         } catch (Exception ex) {
             throw new RuntimeException("Error creating owner: ", ex);
         } finally {
             try {
+                statement.close();
                 connection.close();
             } catch (Exception e) { /* ignored */ }
         }
