@@ -1,34 +1,23 @@
 package com.cdip.java.myshop.view;
 
-import com.cdip.java.myshop.controller.ShopController;
-import com.cdip.java.myshop.model.Employee;
-import com.cdip.java.myshop.model.Owner;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.List;
+public class ShopView extends Application {
 
-public class ShopView {
-
-    public static void main(String[] a) {
-
-        // create an owner object
-        Owner owner = new Owner();
-        List<Owner> owners = new ArrayList<Owner>();
-        owners.add(owner);
-
-
-        // create some employees
-        Employee employee1 = new Employee();
-        Employee employee2 = new Employee();
-
-        List<Employee> employees = new ArrayList<Employee>();
-        employees.add(employee1);
-        employees.add(employee2);
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("../create_shop.fxml"));
+        primaryStage.setTitle("Create Shop");
+        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.show();
+    }
 
 
-        // take input and create a shop object
-        ShopController shopController = new ShopController();
-        //shopController.create("Shwapno", "Uttara", owners, employees);
-        shopController.create("Shwapno", "Uttara 11 sector");
+    public static void main(String[] args) {
+        launch(args);
     }
 }

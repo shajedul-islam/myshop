@@ -1,4 +1,4 @@
-package com.cdip.java.myshop.view.sample;
+package com.cdip.java.myshop.view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
