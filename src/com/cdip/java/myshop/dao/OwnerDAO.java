@@ -43,7 +43,7 @@ public class OwnerDAO {
         return owner;
     }
 
-    public List<Owner> getAll() {
+    public List<Owner> findAll() {
         try {
             Connection connection = ConnectionFactory.getConnection();
             Statement stmt = connection.createStatement();

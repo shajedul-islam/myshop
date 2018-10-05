@@ -1,10 +1,14 @@
 package com.cdip.java.myshop.view;
 
+import com.cdip.java.myshop.controller.OwnerController;
+import com.cdip.java.myshop.model.Owner;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.util.List;
 
 public class OwnerView extends Application {
 

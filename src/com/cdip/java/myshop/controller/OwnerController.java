@@ -5,6 +5,8 @@ import com.cdip.java.myshop.model.Owner;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
 
+import java.util.List;
+
 public class OwnerController {
 
     public TextField nameTextField;
@@ -17,5 +19,10 @@ public class OwnerController {
 
         OwnerDAO ownerDAO = new OwnerDAO();
         ownerDAO.save(owner);
+    }
+
+    public List<Owner> getAll() {
+        OwnerDAO ownerDAO = new OwnerDAO();
+        return ownerDAO.findAll();
     }
 }
